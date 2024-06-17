@@ -1,0 +1,14 @@
+<div class="employee-card">
+  <img src="{{imgUrl}}" alt="Employee Image" class="employee-image">
+  <!-- <h3>#{{ id+1 }} {{ name }}</h3> -->
+  <h3>
+    <ng-container *appGenderPrefix="gender; let prefix">{{prefix}} {{ name }}</ng-container>
+  </h3>
+  <div class="contents">
+    <p><i class="fa-solid fa-id-card-clip"></i> &nbsp;&nbsp; #{{1001+id}}</p>
+    <p><i class="fa-solid fa-envelope"></i> &nbsp;&nbsp; {{ email }}</p>
+    <ng-content select=".age"></ng-content>
+    <ng-content select=".grade"></ng-content>
+  </div>
+  <button (click)="removeEmployee()">Remove</button>
+</div>
